@@ -7,9 +7,13 @@ page{
   overflow: hidden;
   overflow-y: hidden;
 }
+.cell__bd{
+  width: 100%;
+}
 .sec-wrap{
     background-color: #fff;
     margin-top: 20rpx;
+    width: 100%;
 }
 .bottom-fiexd{
   position: fixed;

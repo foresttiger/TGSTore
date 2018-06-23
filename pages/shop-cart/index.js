@@ -303,13 +303,13 @@ Page({
     this.setGoodsList(this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), list);
   },
   toPayOrder: function () {
-    if (this.data.goodsList.totalPrice < this.data.shopDeliveryPrice){
-      wx.showModal({
-        title: '未达到起送价',
-        content: '请您再选一些吧！',
-        showCancel: false,
-      })
-    }else{
+    // if (this.data.goodsList.totalPrice < this.data.shopDeliveryPrice){
+    //   wx.showModal({
+    //     title: '未达到起送价',
+    //     content: '请您再选一些吧！',
+    //     showCancel: false,
+    //   })
+    // }else{
       wx.showLoading();
       var that = this;
       if (this.data.goodsList.noSelect) {
@@ -419,7 +419,7 @@ Page({
         }
 
       }
-    }
+    // }
   },
   /*toPayOrder: function () {
     wx.showLoading();

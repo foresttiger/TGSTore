@@ -10,7 +10,9 @@ App({
         key: 'mallName'
       },
       success: function(res) {
+        console.log(res)
         if (res.data.code == 0) {
+          // wx.setStorageSync('mallName', "泰格商城");
           wx.setStorageSync('mallName', res.data.data.value);
         }
       }
@@ -21,6 +23,7 @@ App({
         code: 'goodReputation'
       },
       success: function (res) {
+        console.log(res)
         if (res.data.code == 0) {
           that.globalData.order_reputation_score = res.data.data[0].score;
         }
@@ -32,6 +35,7 @@ App({
         key: 'recharge_amount_min'
       },
       success: function (res) {
+        console.log(res)
         if (res.data.code == 0) {
           that.globalData.recharge_amount_min = res.data.data.value;
         }
@@ -42,6 +46,7 @@ App({
       url: 'https://api.it120.cc/' + that.globalData.subDomain + '/shop/goods/kanjia/list',
       data: {},
       success: function (res) {
+        console.log(res)
         if (res.data.code == 0) {
           that.globalData.kanjiaList = res.data.data.result;
         }
@@ -50,6 +55,7 @@ App({
     wx.request({
       url: 'https://api.it120.cc/' + that.globalData.subDomain + '/shop/goods/category/all',
       success: function (res) {
+        console.log(res)
         var categories = []; //{ id: 0, name: "全品类" }
         if (res.data.code == 0) {
           for (var i = 0; i < res.data.data.length; i++) {
@@ -105,6 +111,7 @@ App({
         categoryId: categoryId
       },
       success: function (res) {
+        console.log(res)
         that.globalData.goods = []
         var goods = [];
 
@@ -204,6 +211,7 @@ App({
     })
   },
   globalData:{
+    // mallName:"泰格",
     page: 1, //初始加载商品时的页面号
     pageSize: 10000, //初始加载时的商品数，设置为10000保证小商户能加载完全部商品
     categories: [],
@@ -219,7 +227,7 @@ App({
     bgGreen: 175,
     bgBlue: 180,
     userInfo: null,
-    subDomain: "tggtest",// 商城后台个性域名tgg
+    subDomain: "tiger",// 商城后台个性域名tgg
     version: "2.0.6",
     shareProfile: '   一流的服务，做超新鲜的水果' // 首页转发的时候术语
   }

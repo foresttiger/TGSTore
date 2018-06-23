@@ -2,6 +2,7 @@ var wxpay = require('../../../utils/pay.js')
 var app = getApp()
 Page({
   data: {
+    // tabs: ["全部", "待付款", "待核销", "已完成", "待评价"],
     tabs: ["待付款", "待发货", "待收货", "待评价", "已完成"],
     tabClass: ["", "", "", "", ""],
     stv: {
@@ -41,6 +42,7 @@ Page({
         token: wx.getStorageSync('token') 
       },
       success: (res) => {
+        console.log(res)
         wx.hideLoading();
         if (res.data.code == 0) {
           var tabClass = that.data.tabClass;

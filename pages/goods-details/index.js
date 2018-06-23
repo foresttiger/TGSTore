@@ -285,13 +285,13 @@ Page({
       })
       return;
     }
-    if (this.data.selectSizePrice * this.data.buyNumber < this.data.shopDeliveryPrice) {
-      wx.showModal({
-        title: '未达到起送价',
-        content: '请您再选一些吧！',
-        showCancel: false,
-      })
-    } else {
+    // if (this.data.selectSizePrice * this.data.buyNumber < this.data.shopDeliveryPrice) {
+    //   wx.showModal({
+    //     title: '未达到起送价',
+    //     content: '请您再选一些吧！',
+    //     showCancel: false,
+    //   })
+    // } else {
       //组建立即购买信息
       var buyNowInfo = this.buliduBuyNowInfo();
       // 写入本地存储
@@ -304,7 +304,7 @@ Page({
       wx.navigateTo({
         url: "/pages/to-pay-order/index?orderType=buyNow"
       })
-    }
+    // }
   },
   /**
    * 组建购物车信息

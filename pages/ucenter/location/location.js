@@ -66,13 +66,14 @@ function fill_zero_prefix(num) {
 
 //****************************************************************************************
 //****************************************************************************************
-
+    // tglatitude: 25.2537400000,
+    // tglongitude: 110.3147700000,
 Page({
   data: {
     clock: '',
     isLocation:false,
-    tglatitude: 36.5424600000,
-    tglongitude: 115.2785000000,
+    tglatitude: 25.2537400000,
+    tglongitude: 110.3147700000,
     latitude: 0,
     longitude: 0,
     markers: [],
